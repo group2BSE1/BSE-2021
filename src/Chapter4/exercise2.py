@@ -9,6 +9,6 @@ try:
 except:
     print("Invalid input!!!")
     exit()
-
+    
 print(f"The final value is {investment(C,r,t,n):,.2f}")
 
