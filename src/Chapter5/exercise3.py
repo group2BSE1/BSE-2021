@@ -15,7 +15,11 @@ while True:
         if price=="q":
             print("Quiting....")
             break
-        print(price)
+        price1=float(price)
+        if (price1>0) and ((price1*100)%5==0):
+            print(price1)
+        else:
+            print("Illegal price: Must be a non-negative multiple of 5 cents.")
     except:
         print("Invalid input!!")
         continue
