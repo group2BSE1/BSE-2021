@@ -1,9 +1,19 @@
+#Functions missing----
+#change from stock 
+#Updating stock
+
+#creating function gives change
+def change(total_deposit,price1):
+    print("Take the change below.") #giving balance
+    balance=total_deposit-price1
+    print(f"{balance*100:.0f} cents")
+
 #creating function that prints purchase price
 def purchase_price(price):
     a=price//1 #Gives number of dollars
     b=price%1 #Gives number of cents
     if a==0:
-        payment_due=print(f"Payment due:{b*100:.0f} cents")   
+        payment_due=print(f"Payment due:{b*100:.0f} cents")
     else:
         payment_due=print(f"Payment due:{a:.0f} dollars and {b*100:.0f} cents")
 
@@ -15,44 +25,52 @@ def deposit():
         test_price=price1
         dep=input("Indicate your deposit:")
         if dep=="c":
-            print("Take the change below")
-            #Function change
-            print(total_deposit)
+            print("Take the change below.")
+            print(total_deposit) #Giving refund
             break
         elif dep=="f":
             total_deposit=total_deposit+5
             test_price=test_price-total_deposit
-            #print("Money so far:",total_deposit)
-            purchase_price(test_price)
+            if total_deposit<price1:
+                purchase_price(test_price)
+            else:
+                change(total_deposit, price1)
             continue
         elif dep=="o":
             total_deposit=total_deposit+1
             test_price=test_price-total_deposit
-            #print("Money so far:",total_deposit)
-            purchase_price(test_price)
+            if total_deposit<price1:
+                purchase_price(test_price)
+            else:
+                change(total_deposit, price1)
             continue
         elif dep=="q":
             total_deposit=total_deposit+0.25
             test_price=test_price-total_deposit
-            #print("Money so far:",total_deposit)
-            purchase_price(test_price)
+            if total_deposit<price1:
+                purchase_price(test_price)
+            else:
+                change(total_deposit, price1)
             continue
         elif dep=="d":
             total_deposit=total_deposit+0.1
             test_price=test_price-total_deposit
-            #print("Money so far:",total_deposit)
-            purchase_price(test_price)
+            if total_deposit<price1:
+                purchase_price(test_price)
+            else:
+                change(total_deposit, price1)
             continue
         elif dep=="n":
             total_deposit=total_deposit+0.05
             test_price=test_price-total_deposit
-            #print("Money so far:",total_deposit)
-            purchase_price(test_price)
+            if total_deposit<price1:
+                purchase_price(test_price)
+            else:
+                change(total_deposit, price1)
             continue
         else:
             print("Illegal selection:",dep)
             continue
-    #print(total_deposit)
 
     
 #creating function for menu of deposit selection
