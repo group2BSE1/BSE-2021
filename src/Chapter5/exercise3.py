@@ -1,12 +1,31 @@
 #Functions missing----
-#change from stock 
 #Updating stock
+
+
+#change from stock 
+def greedy(bal):
+    while bal>=25: #If money can be converted to quarters
+        print(bal//25,"quarter(s)")
+        bal=bal%25
+        continue
+    while bal>=10:#if money can be converted to dimes
+        print(bal//10,"dime(s)")
+        bal=bal%10
+    while bal>=5:#if money can be converted to nickels
+        print(bal//5,"nickel(s)")
+        break
+    else:#If person requests refund before einserting money
+        print("0 cents")
+    
+
+
 
 #creating function gives change
 def change(total_deposit,price1):
     print("Take the change below.") #giving balance
     balance=total_deposit-price1
-    print(f"{balance*100:.0f} cents")
+    bal=round(balance*100)
+    greedy(bal)
 
 #creating function that prints purchase price
 def purchase_price(price):
@@ -25,8 +44,8 @@ def deposit():
         test_price=price1
         dep=input("Indicate your deposit:")
         if dep=="c":
-            print("Take the change below.")
-            print(total_deposit) #Giving refund
+            #Giving refund
+            change(total_deposit,0)
             break
         elif dep=="f":
             total_deposit=total_deposit+5
