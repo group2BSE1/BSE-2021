@@ -1,21 +1,31 @@
 #Functions missing----
 #Updating stock
 
-
-#change from stock 
+#Function to get change from stock 
 def greedy(bal):
+    nickels=25
+    dimes=25
+    quarters=25
+    ones=0
+    fives=0
     while bal>=25: #If money can be converted to quarters
         print(bal//25,"quarter(s)")
+        quarters=quarters-(bal//25)
         bal=bal%25
         continue
     while bal>=10:#if money can be converted to dimes
         print(bal//10,"dime(s)")
+        dimes=dimes-(bal//10)
         bal=bal%10
+        continue
     while bal>=5:#if money can be converted to nickels
         print(bal//5,"nickel(s)")
+        nickels=nickels-(bal//5)
         break
-    else:#If person requests refund before einserting money
+    else:#If person requests refund before inserting money
         print("0 cents")
+    print(f"Stock contains:\n {nickels} nickels\n {dimes} dimes\n {quarters} quarters")
+    
     
 
 
@@ -37,7 +47,7 @@ def purchase_price(price):
         payment_due=print(f"Payment due:{a:.0f} dollars and {b*100:.0f} cents")
 
 #creating function to accept deposit
-def deposit():
+def deposit(fives,ones):
     purchase_price(price1)
     total_deposit=0
     while price1>total_deposit:
@@ -50,6 +60,7 @@ def deposit():
         elif dep=="f":
             total_deposit=total_deposit+5
             test_price=test_price-total_deposit
+            fives=fives+1
             if total_deposit<price1:
                 purchase_price(test_price)
             else:
@@ -58,6 +69,7 @@ def deposit():
         elif dep=="o":
             total_deposit=total_deposit+1
             test_price=test_price-total_deposit
+            ones=ones+1
             if total_deposit<price1:
                 purchase_price(test_price)
             else:
@@ -90,6 +102,9 @@ def deposit():
         else:
             print("Illegal selection:",dep)
             continue
+    print(f" {ones} ones\n {fives} fives")
+    
+
 
     
 #creating function for menu of deposit selection
@@ -102,7 +117,6 @@ def deposit_menu():
   'f' - deposit a five dollar bill
   'c' - cancel the purchase
 """)
-
 
 #main program
 #initializing money
@@ -124,7 +138,7 @@ while True:
         price1=float(price)
         if (price1>0) and ((price1*100)%5==0):
             deposit_menu()
-            deposit()
+            deposit(fives, ones)
         else:
             print("Illegal price: Must be a non-negative multiple of 5 cents.")
     except:
