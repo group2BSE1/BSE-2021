@@ -47,7 +47,9 @@ def purchase_price(price):
         payment_due=print(f"Payment due:{a:.0f} dollars and {b*100:.0f} cents")
 
 #creating function to accept deposit
-def deposit(fives,ones):
+def deposit():
+    ones=0
+    fives=0
     purchase_price(price1)
     total_deposit=0
     while price1>total_deposit:
@@ -138,7 +140,7 @@ while True:
         price1=float(price)
         if (price1>0) and ((price1*100)%5==0):
             deposit_menu()
-            deposit(fives, ones)
+            deposit()
         else:
             print("Illegal price: Must be a non-negative multiple of 5 cents.")
     except:
