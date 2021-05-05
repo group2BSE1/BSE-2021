@@ -69,4 +69,4 @@ while True:
             continue
     except:
         print("\nError!!! Enter valid code.")
-        break
+        continue
