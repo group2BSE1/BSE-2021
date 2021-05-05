@@ -1,7 +1,3 @@
-# Function for total out come 
-#def output(code,begin,end,gallons,amt):
-#    print(f"Customer code: {code}\nBeginning meter reading: {begin}\nEnding meter reading:\t{end}\nGallons of water used: {gallons}\nAmount billed:{amt:$.2f}")
-
 # Function for Bill
 def bill(gallons,code,begin,end):
     if code=="r" or code=="R":
