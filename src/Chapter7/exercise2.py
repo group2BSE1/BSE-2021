@@ -1,7 +1,7 @@
 try:
     mylist=[]
     name=input("Enter file name:")
-    file=open(fr"C:\Users\DELL\Desktop\BSE_Group2\BSE-2021\src\Files\{name}","r")
+    file=open(name,"r")
     count=0
     for line in file:
         if line.startswith("X-DSPAM-Confidence:"):

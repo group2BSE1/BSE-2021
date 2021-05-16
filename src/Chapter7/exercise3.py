@@ -4,7 +4,7 @@ try:
     if name=="na na boo boo":
         print("NA NA BOO BOO TO YOU - You have been punk'd!")
     else:
-        file=open(fr"C:\Users\DELL\Desktop\BSE_Group2\BSE-2021\src\Files\{name}","r")
+        file=open(name,"r")
         for line in file:
             if line.startswith("X-DSPAM-Confidence:"):
                 count+=1
