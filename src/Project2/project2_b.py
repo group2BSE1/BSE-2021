@@ -18,23 +18,36 @@ def ref(income):
 while True:
     try:
         file = input('Enter input file:')
-        if file.endswith(".txt"):
+        if file=="measles.txt":
             pass
         else:
-            print("File must end with \".txt\"")
+            print("File should be \"measles.txt\"")
             continue
         year = int(input('Enter year:'))
         year = str(year)
         income = int(input('Enter income level:'))
         income2=ref(income)
         measles = open(file, 'r')
+        count=0
+        add=0
+        lowest=99
+        highest=0
         for line in measles:
-            if (income2==line[51:56]) and (year==line[88:92]):
-                save.write(line)
-                print("Done")
-        #report(year,income2)
+            if (income2 in line[51:57]) and (year==line[88:92]):
+                child=line[59:62]
+                child2=int(child)
+                if child2>highest:
+                    highest=child2
+                if child2<lowest:
+                    lowest=child2 
+                add+=child2
+                count+=1
+        average=add/count
+        print("Lowest percentage =",lowest)
+        print("Highest percentage =",highest)
+        print("Average percentage =",average)
         print("Success!!")
         break
     except:
         print("Error!! , Invalid Input!!")
-        break
+        continue
