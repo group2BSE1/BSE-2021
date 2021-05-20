@@ -1,3 +1,11 @@
+def open_file():
+    file = input('Enter input file:')
+    if file=="measles.txt":
+        return file
+    else:
+        print("File should be \"measles.txt\"")
+        exit()
+
 #Function compare income and the integers
 def ref(income):
     if income==1:
@@ -17,12 +25,7 @@ def ref(income):
 
 while True:
     try:
-        file = input('Enter input file:')
-        if file=="measles.txt":
-            pass
-        else:
-            print("File should be \"measles.txt\"")
-            continue
+        file=open_file()
         year = int(input('Enter year:'))
         year = str(year)
         income = int(input('Enter income level:'))
