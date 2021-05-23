@@ -2,6 +2,11 @@ try:
     #open measles file
     measles = open('measles.txt', 'r')
     inp = input('Enter year: ')
+    if len(inp) <= 4:
+        pass
+    else:
+        print('Invalid inp length!!!')
+        inp = input('Enter year: ')
     file = input('Enter file name to save text: ')
     #File must have .txt extesion
     if '.txt' in file:
